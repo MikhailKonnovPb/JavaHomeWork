@@ -20,7 +20,11 @@ public class Calculator {
                 break;
             case "*": System.out.println((operand1)+sign+(operand2)+"="+(operand1*operand2));
                 break;
-            case "/": System.out.println((operand1)+sign+(operand2)+"="+(operand1/operand2));
+            case "/":
+                if (operand1==0 || operand2==0) {
+                    System.out.println("Ділене або дільник дорівнює нулю");
+                }
+                else System.out.println((operand1)+sign+(operand2)+"="+(operand1/operand2));
                 break;
         }
     }
