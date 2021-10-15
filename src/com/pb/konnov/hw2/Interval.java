@@ -20,7 +20,7 @@ public class Interval {
             if (interval>=51 && interval<=100) {
                 System.out.println("Ви ввели інтервал між 51 та 100");
             }
-            if (interval<=0 || interval>=100) {
+            if (interval<0 || interval>100) {
                 System.out.println("Число не входить в жодний інтервал");
             }
         }
