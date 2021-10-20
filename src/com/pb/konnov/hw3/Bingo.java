@@ -26,8 +26,8 @@ public class Bingo {
                     System.out.println("Dы хотите закочить Y/N ?");
                     temp=scan.next();
                     if (temp.equals("Y")) {
-                        b = true;
                         System.out.println("Игра окончена");
+                        break;
                     }
                 }
 
