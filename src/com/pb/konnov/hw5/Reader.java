@@ -9,22 +9,37 @@ public class Reader {
     String birth;
     String phone_number;
 
-    public void takeBook(int s) {
-        System.out.println(name + " узяв " + s + " книги");
+    public void takeBook(int bookCount) {
+        System.out.println(name + " узяв " + bookCount + " книги");
     }
-    public void takeBook(String... titles) {
-        System.out.println(name+" узяв книги: "+titles[0]+", "+titles[1]+", "+titles[2]);
+    public void takeBook(String... bookNames) {
+          System.out.println(name+" узяв книги: "+bookNames[0]+", "+bookNames[1]+", "+bookNames[2]);
+      }
+    public void takeBook(Book... books) {
+        int i=0;
+        String temp = new String();
+        for (Book title : books) {
+            temp = temp + books[i].title + " (" + books[i].author + " " + books[i].year + "р.), ";
+            i++;
+        }
+        temp = temp.substring(0,(temp.length()-2))+".";
+        System.out.println(name + " узяв книги: " + temp);
     }
-    public void takeBook( String[] temp, int[] args ) {
-        System.out.println(name+" узяв книги: "+temp[0]+" ("+temp[3]+" "+args[0]+" р.) "+temp[1]+" ("+temp[4]+" "+args[2]+" р.), "+temp[2]+" ("+temp[5]+" "+args[2]+" р.)");
+    public void returnBook(int bookCount) {
+
+        System.out.println(name + " повернув " + bookCount + " книги");
     }
-    public void returnBook(int s) {
-        System.out.println(name + " повернув " + s + " книги");
+    public void returnBook(String... bookNames) {
+        System.out.println(name+" повернув книги: "+bookNames[0]+", "+bookNames[1]+", "+bookNames[2]);
     }
-    public void returnBook(String... titles) {
-        System.out.println(name+" повернув книги: "+titles[0]+", "+titles[1]+", "+titles[2]);
-    }
-    public void returnBook( String[] temp, int[] args ) {
-        System.out.println(name+" повернув книги: "+temp[0]+" ("+temp[3]+" "+args[0]+" р.) "+temp[1]+" ("+temp[4]+" "+args[2]+" р.), "+temp[2]+" ("+temp[5]+" "+args[2]+" р.)");
+    public void returnBook( Book... books ) {
+        int i=0;
+        String temp = new String();
+        for (Book title : books) {
+            temp = temp + books[i].title + " (" + books[i].author + " " + books[i].year + "р.), ";
+            i++;
+        }
+        temp = temp.substring(0,(temp.length()-2))+".";
+        System.out.println(name + " повернув книги: " + temp);
     }
 }

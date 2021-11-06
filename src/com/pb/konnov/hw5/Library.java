@@ -43,23 +43,17 @@ public class Library {
        reader1.takeBook(book1.title,book2.title,book3.title);
        reader2.takeBook(book2.title,book3.title,book1.title);
        reader3.takeBook(book3.title,book1.title,book2.title);
-       String[] temp1 = {book1.title,book2.title,book3.title,book1.author,book2.author,book3.author};
-       int[] temp2 = { book1.year, book2.year, book3.year};
-       reader1.takeBook(temp1,temp2);
-       String[] temp3 = {book2.title,book3.title,book1.title,book2.author,book3.author,book1.author};
-       int[] temp4 = { book2.year, book3.year, book1.year};
-       reader2.takeBook(temp3,temp4);
-       String[] temp5 = {book3.title,book1.title,book2.title,book3.author,book1.author,book2.author};
-       int[] temp6 = { book3.year, book1.year, book2.year};
-       reader3.takeBook(temp5,temp6);
+       reader1.takeBook(book1,book2,book3);
+       reader2.takeBook(book2,book1,book2);
+       reader3.takeBook(book3,book2,book1);
        reader1.returnBook(3);
        reader2.returnBook(2);
        reader3.returnBook(1);
        reader1.returnBook(book1.title,book2.title,book3.title);
        reader2.returnBook(book2.title,book3.title,book1.title);
        reader3.returnBook(book3.title,book1.title,book2.title);
-       reader1.returnBook(temp1,temp2);
-       reader2.returnBook(temp3,temp4);
-       reader3.returnBook(temp5,temp6);
+       reader1.returnBook(book1,book2,book3);
+       reader2.returnBook(book2,book1,book2);
+       reader3.returnBook(book3,book2,book1);
     }
 }
